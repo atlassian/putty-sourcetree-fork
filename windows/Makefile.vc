@@ -138,7 +138,7 @@ $(BUILDDIR)pageant.exe: $(BUILDDIR)aqsync.obj $(BUILDDIR)conf.obj \
 <<
 	link $(LFLAGS) $(XLFLAGS) -out:$(BUILDDIR)pageant.exe -map:$(BUILDDIR)pageant.map -nologo -subsystem:windows$(SUBSYSVER) @link_pageant
 
-$(BUILDDIR)plink.exe: $(BUILDDIR)aqsync.obj $(BUILDDIR)be_all_s.obj \
+$(BUILDDIR)plink.exe: $(BUILDDIR)aqsync.obj $(BUILDDIR)askpass.obj $(BUILDDIR)be_all_s.obj \
 		$(BUILDDIR)be_misc.obj $(BUILDDIR)callback.obj \
 		$(BUILDDIR)cmdline.obj $(BUILDDIR)conf.obj \
 		$(BUILDDIR)cproxy.obj $(BUILDDIR)errsock.obj \
@@ -175,7 +175,7 @@ $(BUILDDIR)plink.exe: $(BUILDDIR)aqsync.obj $(BUILDDIR)be_all_s.obj \
 		$(BUILDDIR)winucs.obj $(BUILDDIR)winx11.obj \
 		$(BUILDDIR)x11fwd.obj
 	type <<link_plink
- advapi32.lib $(BUILDDIR)aqsync.obj $(BUILDDIR)be_all_s.obj
+ advapi32.lib $(BUILDDIR)aqsync.obj $(BUILDDIR)askpass.obj $(BUILDDIR)be_all_s.obj
  $(BUILDDIR)be_misc.obj $(BUILDDIR)callback.obj $(BUILDDIR)cmdline.obj
  comdlg32.lib $(BUILDDIR)conf.obj $(BUILDDIR)cproxy.obj
  $(BUILDDIR)errsock.obj gdi32.lib imm32.lib $(BUILDDIR)ldisc.obj
@@ -502,6 +502,9 @@ $(BUILDDIR)testbn.exe: $(BUILDDIR)conf.obj $(BUILDDIR)misc.obj \
 	link $(LFLAGS) $(XLFLAGS) -out:$(BUILDDIR)testbn.exe -map:$(BUILDDIR)testbn.map -nologo -subsystem:console$(SUBSYSVER) @link_testbn
 
 $(BUILDDIR)aqsync.obj: ..\aqsync.c ..\putty.h ..\puttyps.h ..\network.h \
+		..\misc.h ..\windows\winstuff.h ..\unix\unix.h ..\puttymem.h \
+		..\tree234.h ..\windows\winhelp.h ..\charset\charset.h
+$(BUILDDIR)askpass.obj: ..\askpass.c ..\putty.h ..\puttyps.h ..\network.h \
 		..\misc.h ..\windows\winstuff.h ..\unix\unix.h ..\puttymem.h \
 		..\tree234.h ..\windows\winhelp.h ..\charset\charset.h
 $(BUILDDIR)be_all_s.obj: ..\be_all_s.c ..\putty.h ..\puttyps.h ..\network.h \
@@ -1072,7 +1075,7 @@ $(BUILDDIR)xpmpucfg.obj: ..\unix\xpmpucfg.c
 $(BUILDDIR)xpmputty.obj: ..\unix\xpmputty.c
 
 .c.obj::
-	cl /Fo$(BUILDDIR) $(COMPAT) $(CFLAGS) $(XFLAGS) /c $<
+	cl /Fo$(BUILDDIR) $(COMPAT) $(CFLAGS) $(XFLAGS) /c $<yy
 
 {..\}.c.obj::
 	cl /Fo$(BUILDDIR) $(COMPAT) $(CFLAGS) $(XFLAGS) /c $<

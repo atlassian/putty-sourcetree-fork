@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\aqsync.c" />
+    <ClCompile Include="..\..\..\askpass.c" />
     <ClCompile Include="..\..\..\be_all_s.c" />
     <ClCompile Include="..\..\..\be_misc.c" />
     <ClCompile Include="..\..\..\callback.c" />

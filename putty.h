@@ -1295,6 +1295,11 @@ void console_provide_logctx(void *logctx);
 int is_interactive(void);
 
 /*
+ * Exports from askpass frontends (askpass.c)
+ */
+ int askpass_get_userpass_input(prompts_t *p, unsigned char *in, int inlen);
+  
+/*
  * Exports from printing.c.
  */
 typedef struct printer_enum_tag printer_enum;

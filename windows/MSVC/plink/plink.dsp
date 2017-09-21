@@ -98,6 +98,10 @@ SOURCE=..\..\..\aqsync.c
 # End Source File
 # Begin Source File
 
+SOURCE=..\..\..\askpass.c
+# End Source File
+# Begin Source File
+
 SOURCE=..\..\..\be_all_s.c
 # End Source File
 # Begin Source File

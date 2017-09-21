@@ -151,6 +151,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>    <ClCompile Include="..\..\..\x11fwd.c">
       <Filter>Source Files</Filter>
+    </ClCompile>    <ClCompile Include="..\..\..\askpass.c">
+      <Filter>Source Files</Filter>
     </ClCompile>  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\charset\charset.h">
