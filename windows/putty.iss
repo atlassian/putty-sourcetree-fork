@@ -14,12 +14,12 @@
 
 [Setup]
 AppName=PuTTY
-AppVerName=PuTTY version 0.70.1
-VersionInfoTextVersion=Release 0.70.1
-AppVersion=0.70.1
-VersionInfoVersion=0.70.1.0
+AppVerName=PuTTY version 0.70.2-Sourcetree
+VersionInfoTextVersion=Release 0.70.2-Sourcetree
+AppVersion=0.70.2
+VersionInfoVersion=0.70.2.0
 AppPublisher=Simon Tatham
-AppPublisherURL=https://www.chiark.greenend.org.uk/~sgtatham/putty/
+AppPublisherURL=https://github.com/atlassian/putty-sourcetree-fork
 AppReadmeFile={app}\README.txt
 DefaultDirName={pf}\PuTTY
 DefaultGroupName=PuTTY
